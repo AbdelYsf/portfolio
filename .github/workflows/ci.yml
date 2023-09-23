@@ -1,4 +1,4 @@
-name: CI/CD for React App
+name: CI/CD for my portfolio
 
 on:
   push:
@@ -25,3 +25,9 @@ jobs:
         run: |
           npm run build
           npm test
+
+      - name: Deploy to GitHub Pages
+        run: |
+          npm install -g gh-pages
+          gh-pages -d build -b gh-pages
+
