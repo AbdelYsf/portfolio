@@ -5,11 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'background_light': "url('src/assets/background-light.svg')",
-      },
-    },
+
   },
   darkMode: 'class',
   plugins: [],
