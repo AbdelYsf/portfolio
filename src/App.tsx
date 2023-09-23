@@ -1,12 +1,13 @@
 import './App.css'
 import {TypeAnimation} from "react-type-animation";
 import {useCallback, useState} from "react";
-import {NavBar} from "./NavBar.tsx";
-import {Summary} from "./Summary.tsx";
-import {SocialMedia} from "./SocialMedia.tsx";
+import {NavBar} from "./components/NavBar.tsx";
+import {Summary} from "./components/Summary.tsx";
+import {SocialMedia} from "./components/SocialMedia.tsx";
 import {loadFull} from "tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
+import {darkModeOptions, lightModeOptions} from "./configs/tsparticles.ts";
 
 
 function App() {
@@ -32,76 +33,7 @@ function App() {
                 id="tsparticles"
                 init={particlesInit}
                 loaded={particlesLoaded}
-                options={{
-                    background: {
-
-
-                    },
-                    fpsLimit: 60,
-                    interactivity: {
-                        events: {
-                            onClick: {
-                                enable: true,
-                                mode: "push",
-                            },
-                            onHover: {
-                                enable: true,
-                                mode: "repulse",
-                            },
-                            resize: true,
-                        },
-                        modes: {
-                            push: {
-                                quantity: 4,
-                            },
-                            repulse: {
-                                distance: 200,
-                                duration: 0.4,
-                            },
-                        },
-                    },
-                    particles: {
-                        color: {
-                            value: "#ffffff",
-                        },
-                        links: {
-                            color: "#ffffff",
-                            distance: 150,
-                            enable: true,
-                            opacity: 0.5,
-                            width: 1,
-                        },
-                        move: {
-                            direction: "none",
-                            enable: true,
-                            outModes: {
-                                default: "split",
-                            },
-
-                            random: true,
-                            speed: 0.5,
-                            straight: false,
-                        },
-                        number: {
-                            density: {
-                                enable: true,
-                                area: 1500,
-                            },
-                            value: 80,
-                        },
-                        opacity: {
-                            value: 0.5,
-                        },
-                        shape: {
-                            type: "square",
-                        },
-                        size: {
-                            value: { min: 1, max: 5 },
-                        },
-
-                    },
-                    detectRetina: true,
-                }}
+                options={darkMode ? darkModeOptions : lightModeOptions}
             />
         <div className="w-screen h-screen no-scrollbar ">
 
