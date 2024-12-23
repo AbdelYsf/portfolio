@@ -8,6 +8,7 @@ import {loadFull} from "tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import {darkModeOptions, lightModeOptions} from "./configs/tsparticles.ts";
+import linkedinImage from './assets/my-linkedin-image.jpeg';
 
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
                 <div className="bg-gray-200 p-[6px]   bg-gradient-to-r  from-[#6EE7B7] via-[#3B82F6] to-[#9333EA] rounded-full">
                 <div >
                     <img
-                        src="src/assets/my-linkedin-image.jpeg"
+                        src={linkedinImage}
                         alt="my-image"
                         className="mx-auto  h-40 w-40 rounded-full"
                     />
